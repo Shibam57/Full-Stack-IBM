@@ -1,0 +1,32 @@
+.parent{
+    width: 100%;
+    border: 1px solid black;
+    height: 400px;
+    background-color: bisque;
+    display: grid;
+    grid-template-columns: repeat(4, 1ft);
+}
+.parent>div{
+    background-color: aqua;
+    /* width: 200px;
+    height: 200px; */
+    margin-right: 10px;
+    border: 1px solid green;
+}
+
+.parent>div:nth-child(3){
+    
+}
+
+.parent>div:nth-child(1){
+    background-color: brown;
+    grid-area: 1/1/1/2;
+}
+
+/* .parent>p:nth-child(2){
+    
+    background-color: brown;
+    width: 100px;
+    height: 100px;
+    color: chartreuse;
+} */

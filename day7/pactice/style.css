@@ -1,0 +1,38 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.parent{
+    width: 500px;
+    border: 1px solid black;
+    height: 500px;
+    background-color: bisque;
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    margin: auto;
+}
+.parent>div{
+    background-color: aqua;
+    
+    
+    border: 1px solid green;
+}
+
+.parent>div:nth-child(1){
+    background-color: blue;
+    grid-area: 1/1/2/3;
+}
+.parent>div:nth-child(2){
+    background-color: blue;
+    grid-area: 1/2/3/2;
+}
+
+
+
+@media screen and (max-width: 700px) {
+    .parent{
+        grid-template-columns: repeat(3, auto);
+    }
+}
