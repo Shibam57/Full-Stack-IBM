@@ -22,4 +22,10 @@ const hsd=(()=>{
     console.log("sdh")
 })
 console.log(hsd());
-// what is hoyest string?
+
+
+let x = myFunction(4, 3);
+
+function myFunction(a, b) {
+  return a * b;
+}
