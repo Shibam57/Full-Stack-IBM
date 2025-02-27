@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FROM</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="parent">
+        <form action="submit" id="userform">
+            <label for="movieName">Movie Name :</label>
+            <br>
+            <input type="text" id="movieName" placeholder="Enter the Movie Name" required>
+            <br>
+            <input type="textarea" id="movieDescription" placeholder="Description">
+            <br>
+            <label for="date">Release Date :</label>
+            <br>
+            <input type="date" id="date" required>
+            <br>
+            <label for="ratings">Enter Ratings(1-10) :</label>
+            <br>
+            <input type="number" id="ratings" min="1" max="10">
+            <br>
+            <label for="genre">Genre :</label>
+            <select name="genre" id="genre">
+                <option value>Choose a Genre :</option>
+                <option value="comedy">Comedy</option>
+                <option value="drama">Drama</option>slot
+                <option value="sci-Fi">Sci-Fi</option>slot
+                <option value="horror">Horror</option>slot
+                <option value="action">Action</option>slot
+                <option value="other">Other</option>slot
+            </select>
+            <button type="submit">Submit</button>
+    </form>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

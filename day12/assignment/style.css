@@ -1,0 +1,55 @@
+h1 {
+    margin-left: 75px;
+}
+body {
+    background-color: rgb(99, 222, 222);
+}
+#parent {
+    border: 1px solid black;
+    height: 500px;
+    width: 300px;
+    margin: auto;
+    border-radius: 10px;
+    background-color: beige;
+}
+#parent input {
+    padding: 5px;
+    margin-left: 10px;
+    margin-bottom: 20px;
+    width: 90%;
+}
+#parent label {
+    margin-left: 10px;
+}
+select {
+    padding: 5px;
+    margin-left: 10px;
+    margin-bottom: 20px;
+    width: 94%;
+}
+button {
+    border: 1px solid #000000;
+    background-color: rgb(25, 200, 200);
+    width: 60px;
+    margin-left: 120px;
+}
+input:focus {
+    background-color: gainsboro;
+}
+button:hover {
+    background-color: rgb(38, 83, 131);
+    color: white;
+}
+table {
+    border-collapse: collapse;
+    border: 2px solid rgb(231, 1, 1);
+    color:rgb(203, 0, 0);
+    margin: auto;
+    width: 80%;
+    margin-top: 50px;
+    padding: 5px;
+}
+td {
+    border: 1px solid black;
+    padding: 9px 11px;
+}
