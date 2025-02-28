@@ -1,5 +1,3 @@
-// FOR EACH
-
 // let arr=[1,2,3,4,5,"shibam",6,7,8,"shdfss",9];
 let arr=[5,8,7,2,7,4,5,1,6,2];
 
