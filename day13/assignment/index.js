@@ -190,6 +190,9 @@ function showData(array){
 
         let button=document.createElement('button');
         button.innerText="add to cart"
+        button.addEventListener('click',()=>{
+          addToCart(el,index)
+        })
 
         box.append(h2,img,p1,p2,p3,button);
 
@@ -198,3 +201,19 @@ function showData(array){
 }
 
 showData(data);
+
+let arr=[];
+
+let cart=[];
+function addToCart(el, index){
+
+  for(let i=0;i<arr.length;i++){
+    if(arr[i].id==el.id){
+      return (alert("ojhdgiubfklek"))
+    }
+  }
+  
+  arr.push(el);
+  localStorage.setItem("DataCart",JSON.stringify(arr));
+  alert("data array to cart")
+}
