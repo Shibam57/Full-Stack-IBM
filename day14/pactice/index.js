@@ -201,23 +201,3 @@ function showData(array){
 }
 
 showData(data);
-
-let arr= JSON.parse(localStorage.getItem('DataCart')) || [];
-
-let cart=[];
-function addToCart(el, index){
-
-  for(let i=0;i<arr.length;i++){
-    if(arr[i].id==el.id){
-      return (alert("ojhdgiubfklek"))
-    }
-  }
-  
-  arr.push(el);
-  localStorage.setItem("DataCart",JSON.stringify(arr));
-  alert("data array to cart")
-}
-
-function cartPage(){
-  window.location.href="cart.html";
-}
