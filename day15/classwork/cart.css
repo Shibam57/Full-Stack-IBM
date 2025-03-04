@@ -38,13 +38,3 @@
     color: #000000;
     align-items: center;
 }
-
-#products{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-}
-
-#products .parentBox{
-    align-items: center;
-}
