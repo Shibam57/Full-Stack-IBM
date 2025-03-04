@@ -245,7 +245,6 @@ function addToCart(product) {
 
 searchInput.addEventListener("input", handleSearch);
 sortSelect.addEventListener("change", handleSort);
-filterSelect.addEventListener("change", handleFilter);
 
 // Initial render
 renderProducts(data);
