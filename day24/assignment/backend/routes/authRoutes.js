@@ -1,37 +1,54 @@
 const express = require('express');
-const bcrypt = require('bcryptjs');
-const jwt = require('jsonwebtoken');
-const User = require('../models/User');
 const router = express.Router();
+const User = require('../models/User');
+const jwt = require('jsonwebtoken');
+const bcrypt = require('bcryptjs');
 
+// Register Route
 router.post('/register', async (req, res) => {
+  const { name, email, password } = req.body;
+  try {
+    let user = await User.findOne({ email });
+    if (user) return res.status(400).json({ msg: 'User already exists' });
 
-    const { name, email, password } = req.body;
-    if (!name || !email || !password) {
-        return res.status(400).json({ message: 'All fields are required' });
-    }
-    const existingUser = await User.findOne({ email });
-    if (existingUser) {
-        return res.status(400).json({ message: 'User already exists'});
-    }
-    const hashedPassword = await bcrypt.hash(password, 10);
-    const user = new User({ name, email, password: hashedPassword });
+    user = new User({ name, email, password });
     await user.save();
-    res.status(201).json({ message: 'User registered successfully' });
+
+    const payload = { user: { id: user.id } };
+    jwt.sign(payload, process.env.JWT_SECRET, { expiresIn: '1h' }, (err, token) => {
+      if (err) throw err;
+      res.json({ token });
+    });
+  } catch (err) {
+    res.status(500).send('Server error');
+  }
 });
 
+// Login Route
 router.post('/login', async (req, res) => {
-    const { email, password } = req.body;
-    const user = await User.findOne({ email });
-    if (!user) {
-        return res.status(400).json({ message: 'Invalid credentials' });
-    }
-    const isMatch = await bcrypt.compare(password, user.password);
-    if (!isMatch) {
-        return res.status(400).json({ message: 'Invalid credentials' });
-    }
-    const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, { expiresIn: '1h' });
-    res.json({ token });
+  const { email, password } = req.body;
+  try {
+    let user = await User.findOne({ email });
+    if (!user) return res.status(400).json({ msg: 'Invalid credentials' });
+
+    const isMatch = await user.comparePassword(password);
+    if (!isMatch) return res.status(400).json({ msg: 'Invalid credentials' });
+
+    const payload = { user: { id: user.id } };
+    jwt.sign(payload, process.env.JWT_SECRET, { expiresIn: '1h' }, (err, token) => {
+      if (err) throw err;
+      res.json({ token });
+    });
+  } catch (err) {
+    res.status(500).send('Server error');
+  }
 });
 
 module.exports = router;
+
+
+const authMiddleware = require('../middleware/authMiddleware');
+
+router.get('/protected', authMiddleware, (req, res) => {
+  res.json({ msg: 'This is a protected route', user: req.user });
+});

@@ -1,0 +1,51 @@
+{
+  "posts": [
+    {
+      "title": "ghjkgh",
+      "views": 225,
+      "id": "1"
+    },
+    {
+      "title": "fgbfgb",
+      "views": 162,
+      "id": "0898"
+    },
+    {
+      "id": "2c23",
+      "title": "sidjifucbsd",
+      "views": 230
+    },
+    {
+      "title": "dsc",
+      "views": 307,
+      "id": "aa2d"
+    }
+  ],
+  "comments": [
+    {
+      "id": "1",
+      "text": "a comment about post 1",
+      "postId": "1"
+    },
+    {
+      "id": "2",
+      "text": "another comment about post 1",
+      "postId": "1"
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "svu": [
+    {
+      "name": "shibam",
+      "text": "shibam is good",
+      "id": "a607"
+    },
+    {
+      "name": "ayan",
+      "text": "ayan is good in javascript",
+      "id": "31d0"
+    }
+  ]
+}

@@ -3,7 +3,7 @@ const { type } = require('os');
 
 const userSchema=mongoose.Schema({
     username: {
-        type:String,
+        type:String, 
         required:true,
     },
     email:{

@@ -1,0 +1,1 @@
+// /*// npm init -y     it used bydefault commend*/

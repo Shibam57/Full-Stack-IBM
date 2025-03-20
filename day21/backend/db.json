@@ -1,0 +1,56 @@
+{
+  "posts": [
+    {
+      "id": "1",
+      "title": "a title",
+      "views": 100
+    },
+    {
+      "id": "2",
+      "title": "another title",
+      "views": 200
+    },
+    {
+      "id": "f14c",
+      "title": "gfd",
+      "views": 0.9584418547364026
+    }
+  ],
+  "comments": [
+    {
+      "id": "1",
+      "text": "a comment about post 1",
+      "postId": "1"
+    },
+    {
+      "id": "2",
+      "text": "another comment about post 1",
+      "postId": "1"
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "svu": [
+    {
+      "id": "1",
+      "text": "traning"
+    },
+    {
+      "id": "2",
+      "text": "nothing"
+    },
+    {
+      "id": "gfdgd",
+      "text": 0.3098452512749108
+    },
+    {
+      "id": "gfdgd",
+      "text": 0.23349841501732937
+    },
+    {
+      "id": "dsf",
+      "text": 0.5503710042785421
+    }
+  ]
+}
